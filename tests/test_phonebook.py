@@ -24,8 +24,14 @@ class TestPhonebook(unittest.TestCase):
         
     def test_delete_contact(self):
         """Test whether user can delete contact"""
+        self.contact1.add_contact("John Doe", 123)
         self.contact1.delete_contact('John Doe')
         self.assertEqual(len(self.contact1.contact_phone_list), 0)
+        
+    def test_delete_if_no_contact(self):
+        """Test whether user can delete contact"""
+        with self.assertRaises(KeyError):
+            self.contact1.delete_contact('John Doe')
     
     if __name__ == "__main__":
         unittest.main(exit=False)
