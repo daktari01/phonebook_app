@@ -6,20 +6,21 @@ class Phonebook:
     
     def add_contact(self, contact_name, contact_phone):
         """Method for user to add contact"""
-        pass
+        self.contact_phone_list[contact_name] = contact_phone
+        return self.contact_phone_list
     
     def update_contact(self, contact_name, contact_phone):
         """Method for user to update contact"""
-        pass
+        # User updates only the phone number
+        self.contact_phone_list[contact_name] = contact_phone
+        return self.contact_phone_list[contact_name]
         
-    def view_contact(self, contact_name):
-        """Method for user to view contact"""
-        pass
-    
     def delete_contact(self, contact_name):
         """Method for user to delete contact"""
-        pass
-    
+        if contact_name in self.contact_phone_list:
+            del self.contact_phone_list[contact_name]
+        else:
+            raise KeyError
         
     
         
