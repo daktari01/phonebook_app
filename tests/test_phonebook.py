@@ -34,9 +34,6 @@ class TestPhonebook(unittest.TestCase):
         with self.assertRaises(KeyError):
             self.contact1.delete_contact('John Doe')
 
-    def test_phone_number_is_numeric(self):
-        """Test that the phone number is numeric"""
-
     
     if __name__ == "__main__":
         unittest.main(exit=False)
